@@ -291,6 +291,14 @@
     var result = {};
     
     
+    return function() {
+      var stringArgs = JSON.stringify(arguments);
+      if (result[stringArgs] === undefined) {
+        result[stringArgs]  = func.apply(this, arguments);
+      } 
+      return result[stringArgs];
+    };
+    
   };
 
   // Delays a function for the given number of milliseconds, and then calls
