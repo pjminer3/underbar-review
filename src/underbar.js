@@ -262,7 +262,7 @@
     // TIP: These variables are stored in a "closure scope" (worth researching),
     // so that they'll remain available to the newly-generated function every
     // time it's called.
-    var alreadyCalled = false;
+    var alreadyCalled = false; 
     var result;
 
     // TIP: We'll return a new function that delegates to the old one, but only
@@ -288,6 +288,9 @@
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var result = {};
+    
+    
   };
 
   // Delays a function for the given number of milliseconds, and then calls
