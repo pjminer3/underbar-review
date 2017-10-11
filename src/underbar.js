@@ -200,10 +200,9 @@
   // provided, provide a default one
   _.some = function(collection, iterator) {
     iterator = iterator || _.identity;
-    // TIP: There's a very clever way to re-use every() here.
-    return !_.every(collection, function(element) {
-      return !iterator(element);
-    });
+    // TIP: There's a very clever way to re-use every() here
+    
+    return !_.every(collection, element => !iterator(element));
   };
 
 
@@ -348,6 +347,7 @@
   // Calls the method named by functionOrKey on each value in the list.
   // Note: You will need to learn a bit about .apply to complete this.
   _.invoke = function(collection, functionOrKey, args) {
+    
   };
 
   // Sort the object's values by a criterion produced by an iterator.
