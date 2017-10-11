@@ -99,15 +99,13 @@
   _.uniq = function(array, isSorted, iterator) {
     iterator = iterator || _.identity;
     
-    var resultArray = [];
-    var evalArray = [];
+    var result = {};
     _.each(array, function(element) {
-      if (!evalArray.includes(iterator(element))) {
-        evalArray.push(iterator(element));
-        resultArray.push(element);
+      if (!result.hasOwnProperty(iterator(element))) {
+        result[iterator(element)] = element;
       } 
     });
-    return resultArray;
+    return Object.values(result);
   };
 
 
